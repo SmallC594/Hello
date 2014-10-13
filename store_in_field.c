@@ -60,14 +60,14 @@ void show_bits(int num)
     while(*bit_array!='\0')
        {
             putchar(*bit_array++);
-       }  */                                         /*以这种方式来输出，程序运行会出现异常,原因还不清楚*/
+       }  */                                         /*浠ヨ繖绉嶆柟寮忔潵杈撳嚭锛岀▼搴忚繍琛屼細鍑虹幇寮傚父,鍘熷洜杩樹笉娓呮*/
 
     for(i=0;i<SIZE;i++)
      {
          if(i%4==0)
          putchar(' ');
          putchar(bit_array[i]);
-     }                                                 /*以这种方式来输出，程序则正常运行*/
+     }                                                 /*浠ヨ繖绉嶆柟寮忔潵杈撳嚭锛岀▼搴忓垯姝ｅ父杩愯*/
 
     free(bit_array);
     }
