@@ -2,9 +2,9 @@
 #include<stdlib.h>
 typedef struct Node
 {
- int key;//Ã¿¸öÈË³ÖÓĞµÄÃÜÂë
- int num;//Õâ¸öÈËµÄ±àºÅ
- struct Node *next;//Ö¸ÏòÏÂÒ»¸ö½Úµã
+ int key;//æ¯ä¸ªäººæŒæœ‰çš„å¯†ç 
+ int num;//è¿™ä¸ªäººçš„ç¼–å·
+ struct Node *next;//æŒ‡å‘ä¸‹ä¸€ä¸ªèŠ‚ç‚¹
 }Node,Link;
 //=================================
 Node* InitList();
@@ -14,12 +14,12 @@ int main()
  Link *p,*q;
  Node * HEAD;
  int n,x;
- HEAD=InitList();//¹¹Ôì³öÒ»¸öÖ»ÓĞÍ·½áµãµÄ¿ÕÁ´±í
+ HEAD=InitList();//æ„é€ å‡ºä¸€ä¸ªåªæœ‰å¤´ç»“ç‚¹çš„ç©ºé“¾è¡¨
  printf("please input the totle number of people:");
- scanf("%d",&n);//×Ü¹²µÄÈËÊın
+ scanf("%d",&n);//æ€»å…±çš„äººæ•°n
  printf("the first key is:");
- scanf("%d",&x);//³õÊ¼ÃÜÂëÎªx
- Creater(n,HEAD);//½¨Á¢ºÃÒ»¸öÔ¼Éª·ò»·
+ scanf("%d",&x);//åˆå§‹å¯†ç ä¸ºx
+ Creater(n,HEAD);//å»ºç«‹å¥½ä¸€ä¸ªçº¦ç‘Ÿå¤«ç¯
  p=HEAD;
  int i;
  int j;
@@ -39,7 +39,7 @@ int main()
  }
  return 0;
 }
-Node* InitList()           //´´½¨Ò»¸ö¿ÕµÄÁ´±í
+Node* InitList()           //åˆ›å»ºä¸€ä¸ªç©ºçš„é“¾è¡¨
 {
  Node * L;
  L=(Node *)malloc(sizeof(Node));
@@ -49,7 +49,7 @@ Node* InitList()           //´´½¨Ò»¸ö¿ÕµÄÁ´±í
  L->next=NULL;
  return L;
 }
-void Creater(int n,Link *L)     //³õÊ¼»¯Á´±í  ÔªËØÊıÄ¿Îªn
+void Creater(int n,Link *L)     //åˆå§‹åŒ–é“¾è¡¨  å…ƒç´ æ•°ç›®ä¸ºn
 {
  Link *p,*q;
  q=L;
@@ -66,10 +66,10 @@ void Creater(int n,Link *L)     //³õÊ¼»¯Á´±í  ÔªËØÊıÄ¿Îªn
   L->next=p;
   L=p;
  }
- L->next=q->next;           //ĞÎ³ÉÑ­»·Á´±í  Á´±íÎ²ÔªËØºó¼ÌÖ¸ÏòÁ´±íÍ·ÔªËØ
+ L->next=q->next;           //å½¢æˆå¾ªç¯é“¾è¡¨  é“¾è¡¨å°¾å…ƒç´ åç»§æŒ‡å‘é“¾è¡¨å¤´å…ƒç´ 
 
- printf("%d\n",q->next->num);   //Í·½áµãºó¼ÌÖ¸ÏòÍ·ÔªËØ
- printf("%d\n",L->next->num);    //Î²ÔªËØºó¼ÌÖ¸ÏòÍ·ÔªËØ
- printf("%d\n",L->next->next->num);  //µÚ¶şÔªËØnumÖµ   ÑéÖ¤Ñ­»·Á´±í´´½¨Íê³É
+ printf("%d\n",q->next->num);   //å¤´ç»“ç‚¹åç»§æŒ‡å‘å¤´å…ƒç´ 
+ printf("%d\n",L->next->num);    //å°¾å…ƒç´ åç»§æŒ‡å‘å¤´å…ƒç´ 
+ printf("%d\n",L->next->next->num);  //ç¬¬äºŒå…ƒç´ numå€¼   éªŒè¯å¾ªç¯é“¾è¡¨åˆ›å»ºå®Œæˆ
  free(q);
 }
